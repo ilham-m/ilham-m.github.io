@@ -3,277 +3,749 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ilham Maulana | Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Ilham Maulana | System Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root{
+  --accent:#d5ff00;
+  --cyan:#00f7ff;
+  --bg:#000;
+  --muted:#b8b8b8;
 }
 
-body {
-  font-family: 'Orbitron', sans-serif;
-  background: #000;
-  color: #fff;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{
+  background:#000;
+  scroll-behavior:smooth;
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(213,255,0,0.15), transparent 30%),
-              radial-gradient(circle at bottom left, rgba(213,255,0,0.08), transparent 25%);
+body{
+  font-family:'Orbitron',sans-serif;
+  background:#000;
+  color:#fff;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
 }
 
-img {
-  z-index: 0;
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(circle at top right,rgba(213,255,0,.15),transparent 30%),
+    radial-gradient(circle at bottom left,rgba(213,255,0,.08),transparent 25%);
 }
 
-canvas#borderCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+canvas#borderCanvas{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1;
+  pointer-events:none;
 }
 
-.container {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  padding: 2rem 15rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+.container,
+.story{
+  position:relative;
+  z-index:2;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 35px;
-  margin-left: 55px;
+/* =========================
+   MAIN CONTENT
+========================= */
+.container{
+  width:100%;
+  max-width:1600px;
+  margin:0 auto;
+  min-height:100vh;
+  padding:100px clamp(50px,8vw,150px) 70px;
+  display:grid;
+  grid-template-columns:minmax(380px,.9fr) minmax(480px,1.1fr);
+  gap:clamp(40px,6vw,100px);
+  align-items:center;
 }
 
-.logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #d5ff00;
+.identity{
+  width:100%;
+  max-width:720px;
 }
 
-.contact-btn {
-  background: linear-gradient(135deg, #d5ff00, #9eff00);
-  border: none;
-  color: #000;
-  padding: 14px 28px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 700;
-  letter-spacing: 1px;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(213,255,0,0.4);
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--accent);
+  font-size:.72rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:22px;
 }
 
-.contact-btn::after {
-  content: ' →';
-  transition: transform 0.3s ease;
-  display: inline-block;
+.eyebrow::before{
+  content:"";
+  width:32px;
+  height:1px;
+  background:var(--accent);
+  box-shadow:0 0 8px var(--accent);
 }
 
-.contact-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 0 30px rgba(213,255,0,0.8);
+h1{
+  font-size:clamp(3rem,5vw,5.6rem);
+  line-height:1.05;
+  letter-spacing:-2px;
+  margin-bottom:18px;
 }
 
-.contact-btn:hover::after {
-  transform: translateX(5px);
+.highlight{
+  display:block;
+  color:var(--accent);
+  font-size:clamp(1rem,1.7vw,1.55rem);
+  font-weight:500;
+  letter-spacing:2px;
+  margin-top:14px;
+  line-height:1.4;
 }
 
-.hero {
-  max-width: 800px;
-  /* margin-top: 18vh;
-  margin-left: 110px; */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.description{
+  font-family:'Inter',Arial,sans-serif;
+  color:#bdbdbd;
+  font-size:clamp(.88rem,1vw,1rem);
+  line-height:1.9;
+  max-width:680px;
+  margin:28px 0;
 }
 
-.hero h1 {
-  font-size: 4rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+.description strong{
+  color:#e5e5e5;
 }
 
-.highlight {
-  color: #d5ff00;
-  font-size: 2.2rem;
-  font-weight: 500;
+.description a{
+  color:var(--accent);
+  font-weight:600;
 }
 
-.hero p {
-  font-family: Arial, sans-serif;
-  color: #ccc;
-  line-height: 1.8;
-  max-width: 700px;
-  margin-bottom: 2rem;
+.identity-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:28px;
 }
 
-.socials {
-  display: flex;
-  gap: 12px;
-  font-size: 0.85rem;
-  flex-wrap: nowrap;
-  align-items: center;
+.identity-tags span{
+  padding:9px 12px;
+  border:1px solid rgba(213,255,0,.22);
+  background:rgba(213,255,0,.035);
+  color:#d9d9d9;
+  font-size:.6rem;
+  letter-spacing:.8px;
 }
 
-.socials a {
-  white-space: nowrap;
-  color: #d5ff00;
-  text-decoration: none;
-  padding: 10px 16px;
-  border: 1px solid rgba(213,255,0,0.4);
-  border-radius: 8px;
-  background: rgba(213,255,0,0.05);
-  transition: all 0.3s ease;
-  position: relative;
+.actions{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:14px;
 }
 
-.socials a::after {
-  content: '↗';
-  margin-left: 8px;
-  font-size: 0.8rem;
+.socials{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
-.socials a:hover {
-  background: #d5ff00;
-  color: #000;
-  box-shadow: 0 0 15px rgba(213,255,0,0.6);
-  transform: translateY(-2px);
+.socials a,
+.contact-btn{
+  font-family:'Orbitron',sans-serif;
+  font-size:.62rem;
+  letter-spacing:.6px;
+  padding:13px 16px;
+  border-radius:6px;
+  text-decoration:none;
+  cursor:pointer;
+  transition:all .25s ease;
 }
 
-.socials a:hover {
-  text-decoration: underline;
+.socials a{
+  color:var(--accent);
+  border:1px solid rgba(213,255,0,.35);
+  background:rgba(213,255,0,.04);
 }
 
-@media (max-width: 768px) {
-  body {
-    overflow-y: auto;
-    height: auto;
-    min-height: 100vh;
+.socials a:hover{
+  background:var(--accent);
+  color:#000;
+  box-shadow:0 0 25px rgba(213,255,0,.25);
+  transform:translateY(-2px);
+}
+
+.contact-btn{
+  border:1px solid var(--accent);
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  box-shadow:0 0 22px rgba(213,255,0,.16);
+}
+
+.contact-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 32px rgba(213,255,0,.4);
+}
+
+/* =========================
+   VISUAL PORTRAIT
+========================= */
+.visual-section{
+  position:relative;
+  width:100%;
+  min-height:680px;
+  display:flex;
+  align-items:center;
+}
+
+.art-frame{
+  width:100%;
+  height:min(72vw,760px);
+  min-height:620px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(213,255,0,.35);
+  background:#101010;
+  clip-path:polygon(0 5%,7% 0,93% 0,100% 7%,100% 93%,93% 100%,7% 100%,0 93%);
+  box-shadow:0 0 60px rgba(213,255,0,.07),inset 0 0 80px rgba(0,0,0,.45);
+}
+
+.art-frame::before{
+  content:"LIFE / SYSTEM / RHYTHM";
+  position:absolute;
+  z-index:3;
+  top:22px;
+  left:28px;
+  color:var(--accent);
+  font-size:.58rem;
+  letter-spacing:2.5px;
+  padding:8px 10px;
+  background:rgba(0,0,0,.62);
+  border-left:2px solid var(--accent);
+}
+
+.art-frame::after{
+  content:"01 — ILHAM MAULANA";
+  position:absolute;
+  z-index:3;
+  bottom:22px;
+  right:28px;
+  color:#fff;
+  font-size:.52rem;
+  letter-spacing:2px;
+  padding:9px 11px;
+  background:rgba(0,0,0,.62);
+  border-right:2px solid var(--cyan);
+}
+
+.art-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  filter:contrast(1.05) saturate(.92);
+}
+
+.art-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.2),transparent 40%,rgba(0,0,0,.1)),
+    linear-gradient(0deg,rgba(0,0,0,.28),transparent 30%);
+}
+
+.info-card{
+  position:absolute;
+  z-index:5;
+  background:rgba(8,8,8,.9);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.12);
+  padding:15px 17px;
+  box-shadow:0 15px 45px rgba(0,0,0,.4);
+}
+
+.info-card small{
+  display:block;
+  color:var(--accent);
+  font-size:.5rem;
+  letter-spacing:2px;
+  margin-bottom:7px;
+}
+
+.info-card p{
+  font-family:'Inter',Arial,sans-serif;
+  color:#d0d0d0;
+  font-size:.72rem;
+  line-height:1.55;
+}
+
+.card-top{
+  top:-20px;
+  right:20px;
+  width:210px;
+  border-top:2px solid var(--accent);
+}
+
+.card-bottom{
+  bottom:-20px;
+  left:20px;
+  width:245px;
+  border-bottom:2px solid var(--cyan);
+}
+
+.corner-label{
+  position:absolute;
+  left:-24px;
+  top:42%;
+  z-index:5;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  color:var(--cyan);
+  font-size:.5rem;
+  letter-spacing:3px;
+}
+
+/* =========================
+   STORY SECTION
+========================= */
+.story{
+  width:100%;
+  max-width:1600px;
+  margin:0 auto;
+  padding:60px clamp(50px,8vw,150px) 110px;
+}
+
+.story-inner{
+  width:100%;
+  border-top:1px solid rgba(255,255,255,.09);
+  padding-top:30px;
+}
+
+.story-title{
+  color:#777;
+  font-size:.6rem;
+  letter-spacing:3px;
+  margin-bottom:25px;
+}
+
+.story-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.story-item{
+  min-height:145px;
+  border-left:1px solid rgba(213,255,0,.35);
+  padding:10px 16px;
+}
+
+.story-item h3{
+  color:var(--accent);
+  font-size:.68rem;
+  letter-spacing:1px;
+  margin-bottom:10px;
+}
+
+.story-item p{
+  font-family:'Inter',Arial,sans-serif;
+  color:#888;
+  font-size:.78rem;
+  line-height:1.7;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media(max-width:1100px){
+  .container{
+    grid-template-columns:1fr;
+    padding:95px clamp(35px,7vw,80px) 70px;
+    gap:75px;
   }
 
-  canvas#borderCanvas {
-    opacity: 0.2;
-    z-index: 0;
-    pointer-events: none;
+  .identity{
+    max-width:850px;
   }
 
-  .container {
-    position: relative;
-    z-index: 3;
-    padding: 1.5rem;
-    min-height: 100vh;
+  .visual-section{
+    width:min(850px,100%);
+    margin:0 auto;
   }
 
-  .header {
-    margin: 0;
+  .art-frame{
+    height:760px;
   }
 
-  .hero {
-    position: relative;
-    z-index: 4;
-    margin-top: 10vh;
-    margin-left: 0;
-    max-width: 100%;
+  .story{
+    padding:60px clamp(35px,7vw,80px) 100px;
   }
 
-  .hero h1 {
-    font-size: 2.2rem;
-    line-height: 1.3;
-  }
-
-  .highlight {
-    font-size: 1.2rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    max-width: 100%;
-  }
-
-  .socials {
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 12px;
-    width: 100%;
-  }
-
-  .socials a {
-    width: 100%;
-    text-align: center;
-    white-space: normal;
-  }
-
-  .contact-wrapper {
-    width: 100%;
-  }
-
-  .contact-btn {
-    width: 100%;
-    display: block;
-    text-align: center;
-    padding: 16px;
+  .story-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
   }
 }
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:700px){
+  body::before{
+    background:
+      radial-gradient(circle at top right,rgba(213,255,0,.10),transparent 35%),
+      radial-gradient(circle at 20% 70%,rgba(213,255,0,.05),transparent 35%);
+  }
+
+  canvas#borderCanvas{
+    opacity:.55;
+  }
+
+  .container{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    min-height:0;
+    padding:75px 22px 55px;
+    gap:60px;
+  }
+
+  .identity{
+    max-width:none;
+  }
+
+  .eyebrow{
+    font-size:.58rem;
+    letter-spacing:2px;
+    margin-bottom:18px;
+  }
+
+  .eyebrow::before{
+    width:22px;
+  }
+
+  h1{
+    font-size:clamp(2.7rem,14vw,4rem);
+    line-height:1.08;
+    letter-spacing:-1px;
+  }
+
+  .highlight{
+    font-size:.88rem;
+    letter-spacing:1.2px;
+    margin-top:12px;
+  }
+
+  .description{
+    margin:24px 0;
+    font-size:.87rem;
+    line-height:1.8;
+  }
+
+  .identity-tags{
+    gap:7px;
+    margin-bottom:24px;
+  }
+
+  .identity-tags span{
+    font-size:.5rem;
+    padding:8px 9px;
+    letter-spacing:.5px;
+  }
+
+  .actions{
+    width:100%;
+    gap:12px;
+  }
+
+  .socials{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+
+  .socials a{
+    text-align:center;
+    padding:12px 7px;
+    font-size:.5rem;
+  }
+
+  /* .socials a:last-child{
+    grid-column:1 / -1;
+  } */
+
+  .contact-btn{
+    width:100%;
+    padding:15px;
+    font-size:.58rem;
+  }
+
+  .visual-section{
+    min-height:auto;
+    width:100%;
+    margin:0;
+    display:block;
+  }
+
+  .art-frame{
+    width:100%;
+    height:auto;
+    min-height:0;
+    aspect-ratio:3 / 4;
+    clip-path:polygon(0 3%,4% 0,96% 0,100% 4%,100% 96%,96% 100%,4% 100%,0 96%);
+  }
+
+  .art-frame img{
+    object-position:center;
+  }
+
+  .art-frame::before{
+    top:14px;
+    left:14px;
+    font-size:.42rem;
+    letter-spacing:1.5px;
+    padding:6px 7px;
+  }
+
+  .art-frame::after{
+    bottom:14px;
+    right:14px;
+    font-size:.38rem;
+    letter-spacing:1.2px;
+    padding:6px 7px;
+  }
+
+  .corner-label{
+    display:none;
+  }
+
+  .info-card{
+    position:relative;
+    width:100%;
+    top:auto;
+    right:auto;
+    bottom:auto;
+    left:auto;
+    margin-top:12px;
+    padding:13px 14px;
+  }
+
+  .info-card p{
+    font-size:.7rem;
+  }
+
+  .card-top{
+    border-top:2px solid var(--accent);
+  }
+
+  .card-bottom{
+    border-bottom:2px solid var(--cyan);
+  }
+
+  .story{
+    padding:10px 22px 75px;
+  }
+
+  .story-inner{
+    padding-top:28px;
+  }
+
+  .story-title{
+    font-size:.52rem;
+    letter-spacing:2px;
+    margin-bottom:20px;
+  }
+
+  .story-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .story-item{
+    min-height:0;
+    padding:11px 14px;
+  }
+
+  .story-item h3{
+    font-size:.6rem;
+  }
+
+  .story-item p{
+    font-size:.76rem;
+    line-height:1.65;
+  }
+}
+
+@media(max-width:380px){
+  .container{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .story{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .socials{
+    grid-template-columns:1fr;
+  }
+
+  .socials a:last-child{
+    grid-column:auto;
+  }
+
+  .identity-tags span{
+    font-size:.46rem;
+  }
+}
+
+
+/* FINAL SPACING & MOBILE READABILITY FIX */
+@media (min-width:1101px){
+.container{padding-left:clamp(150px,13vw,260px);padding-right:clamp(150px,13vw,260px)}
+.story{padding-left:clamp(150px,13vw,260px);padding-right:clamp(150px,13vw,260px)}
+}
+@media (max-width:700px){
+canvas#borderCanvas{opacity:.16}
+.container{padding-left:38px;padding-right:38px}
+.story{padding-left:38px;padding-right:38px}
+.identity,.story-inner{position:relative;z-index:3}
+.identity::before{content:"";position:absolute;z-index:-1;top:-18px;right:-16px;bottom:-18px;left:-16px;background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.72) 75%,rgba(0,0,0,.55));pointer-events:none}
+.story-inner::before{content:"";position:absolute;z-index:-1;inset:-16px -14px;background:rgba(0,0,0,.78);pointer-events:none}
+}
+@media (max-width:420px){
+.container{padding-left:30px;padding-right:30px}
+.story{padding-left:30px;padding-right:30px}
+}
+@media (max-width:360px){
+.container{padding-left:24px;padding-right:24px}
+.story{padding-left:24px;padding-right:24px}
+.socials{grid-template-columns:1fr}
+.socials a:last-child{grid-column:auto}
+}
+
 </style>
 </head>
 <body>
-
 <canvas id="borderCanvas"></canvas>
 
-<div class="container">
-  <div class="hero">
-    <div style="font-size: 1rem; color: #d5ff00; margin-bottom: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9;">
-      Hi, I'm Ilham Maulana
-    </div>
+<main class="container">
+  <section class="identity">
+    <div class="eyebrow">Personal Portfolio / 2026</div>
 
     <h1>
-      System Analyst <br>
-      <span class="highlight">Former Full-Stack Developer</span>
+      System<br>Analyst
+      <span class="highlight">FORMER FULL-STACK DEVELOPER</span>
     </h1>
 
-    <p>
-      Currently working at <a href="https://rapid.amn.co.id/" target="_blank" style="color:#d5ff00; text-decoration:underline; font-weight:bold;">AMN ↗</a>, translating business requirements into scalable technical solutions through requirement gathering, blueprint creation, functional specifications, testing, and cross-team communication.
+    <p class="description">
+      I translate ideas, business requirements, and complex problems into structured systems and technical solutions.
+      Currently working at <a href="https://rapid.amn.co.id/" target="_blank">AMN ↗</a>, with experience in requirement gathering,
+      system design, functional specifications, testing, database architecture, and communication between users and developers.
       <br><br>
-      Previously worked as a Full-Stack Developer and Acting Lead Programmer with experience in Vue.js, Laravel, .NET ecosystem, Angular, and database architecture.
+      But I am not built only from systems and code. Outside work, my world is shaped by <strong>aquariums, ornamental fish,
+      drums, piano, curiosity, and the constant urge to understand how things work.</strong>
     </p>
 
-    <div class="socials">
-      <a href="https://www.instagram.com/haiil__/" target="_blank">Instagram: @haiil__</a>
-      <a href="https://www.facebook.com/profile.php?id=100015257626585" target="_blank">Facebook: @haiil__</a>
-      <a href="https://www.linkedin.com/in/ilham-maulanaa/" target="_blank">LinkedIn: Ilham Maulana</a>
+    <div class="identity-tags">
+      <span>REQUIREMENT GATHERING</span>
+      <span>SYSTEM DESIGN</span>
+      <span>DATABASE</span>
+      <span>VUE.JS</span>
+      <span>.NET</span>
+      <span>FRESHWATER FISH</span>
+      <span>DRUMS</span>
+      <span>PIANO</span>
     </div>
 
-    <div class="contact-wrapper" style="margin-top: 25px; display: inline-block;">
-      <button class="contact-btn" onclick="window.open('https://wa.me/6285158899372', '_blank');">LET'S BUILD SOMETHING</button>
+    <div class="actions">
+      <div class="socials">
+        <a href="https://www.instagram.com/haiil__/" target="_blank">INSTAGRAM ↗</a>
+        <a href="https://www.facebook.com/profile.php?id=100015257626585" target="_blank">FACEBOOK ↗</a>
+        <a href="https://www.tiktok.com/@haiil_28" target="_blank">TIKTOK ↗</a>
+        <a href="https://www.linkedin.com/in/ilham-maulanaa/" target="_blank">LINKEDIN ↗</a>
+      </div>
+      <button class="contact-btn" onclick="window.open('https://wa.me/6285158899372','_blank')">LET'S BUILD SOMETHING →</button>
+    </div>
+  </section>
+
+  <section class="visual-section">
+    <div class="corner-label">A VISUAL SELF PORTRAIT</div>
+
+    <div class="art-frame">
+      <img src="images/ChatGPT Image Aug 25, 2026, 07_22_19 PM.png">
+      <div class="art-overlay"></div>
+    </div>
+
+    <div class="info-card card-top">
+      <small>CORE STRENGTH</small>
+      <p>Analytical thinking, fast learning, responsibility, creativity, and finding structure inside complexity.</p>
+    </div>
+
+    <div class="info-card card-bottom">
+      <small>HUMAN SIDE</small>
+      <p>Sometimes overthinking, losing focus, getting stuck on details, and needing the right trigger to see a new perspective.</p>
+    </div>
+  </section>
+</main>
+
+<section class="story">
+  <div class="story-inner">
+    <div class="story-title">// THE SYSTEM BEHIND THE PERSON</div>
+    <div class="story-grid">
+      <article class="story-item">
+        <h3>01 / WORK</h3>
+        <p>Breaking vague requirements into flows, rules, systems, and solutions that developers and users can understand together.</p>
+      </article>
+      <article class="story-item">
+        <h3>02 / RHYTHM</h3>
+        <p>A drummer and pianist: one side keeps the tempo, the other searches for harmony.</p>
+      </article>
+      <article class="story-item">
+        <h3>03 / AQUARIUM</h3>
+        <p>Fishkeeping is not just a hobby—it's curiosity, observation, patience, and learning from living systems.</p>
+      </article>
+      <article class="story-item">
+        <h3>04 / GROWTH</h3>
+        <p>I don't need to become perfect. I just need to keep becoming a better version of myself.</p>
+      </article>
     </div>
   </div>
-</div>
+</section>
 
 <script>
 const canvas = document.getElementById('borderCanvas');
 const ctx = canvas.getContext('2d');
 
 function resizeCanvas() {
+  // Temporarily remove the canvas height before measuring the real content.
+  // This prevents the canvas itself from affecting document scroll height.
+  canvas.style.height = '0px';
+
+  const contentHeight = Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    window.innerHeight
+  );
+
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.height = contentHeight;
+  canvas.style.height = contentHeight + 'px';
+
   drawBorder();
 }
 
@@ -330,9 +802,9 @@ function drawBorder() {
   ctx.closePath();
   ctx.stroke();
 
-    // decorative cyberpunk corner accents (moved away from text area)
+  // decorative cyberpunk corner accents (moved away from text area)
   ctx.beginPath();
-  
+
   // top right only
   ctx.moveTo(w - 220, 100);
   ctx.lineTo(w - 100, 100);
@@ -353,8 +825,21 @@ function drawBorder() {
 }
 
 window.addEventListener('resize', resizeCanvas);
+window.addEventListener('load', resizeCanvas);
+
+// Recalculate only when actual content sections change size.
+// Do not observe document.body because changing the canvas can create a resize feedback loop.
+if ('ResizeObserver' in window) {
+  const resizeObserver = new ResizeObserver(() => {
+    requestAnimationFrame(resizeCanvas);
+  });
+
+  document.querySelectorAll('.container, .story').forEach(element => {
+    resizeObserver.observe(element);
+  });
+}
+
 resizeCanvas();
 </script>
-
 </body>
 </html>
