@@ -77,14 +77,14 @@
       min-height: 100vh;
       padding: 100px clamp(50px, 8vw, 150px) 70px;
       display: grid;
-      grid-template-columns: minmax(380px, .9fr) minmax(480px, 1.1fr);
+      /* grid-template-columns: minmax(380px, .9fr) minmax(480px, 1.1fr); */
       gap: clamp(40px, 6vw, 100px);
       align-items: center;
     }
 
     .identity {
       width: 100%;
-      max-width: 720px;
+      /* max-width: 720px; */
     }
 
     .eyebrow {
@@ -128,7 +128,7 @@
       color: #bdbdbd;
       font-size: clamp(.88rem, 1vw, 1rem);
       line-height: 1.9;
-      max-width: 680px;
+      /* max-width: 680px; */
       margin: 28px 0;
     }
 
@@ -382,11 +382,11 @@
    TABLET
 ========================= */
     @media(max-width:1100px) {
-      .container {
+      /* .container {
         grid-template-columns: 1fr;
         padding: 95px clamp(35px, 7vw, 80px) 70px;
         gap: 75px;
-      }
+      } */
 
       .identity {
         max-width: 850px;
@@ -928,8 +928,8 @@
       font-family: Inter, sans-serif;
       color: #888;
       font-size: .84rem;
-      line-height: 1.75;  
-      margin-left : 18px;
+      line-height: 1.75;
+      margin-left: 18px;
     }
 
     .project-card li {
@@ -945,7 +945,7 @@
       font-size: .84rem;
       line-height: 1.75
     }
-    
+
     .project-tags {
       color: var(--cyan);
       font-size: .5rem;
@@ -1051,12 +1051,9 @@
     }
 
     .post-card {
-      cursor: pointer;
       padding: 22px;
       border-top: 2px solid rgba(213, 255, 0, .5);
-      background: rgba(255, 255, 255, .025);
-      transition: all 0.4s ease-in; 
-      display: block;
+      background: rgba(255, 255, 255, .025)
     }
 
     .post-card span {
@@ -1075,13 +1072,6 @@
       color: #888;
       font-size: .8rem;
       line-height: 1.7
-    }
-
-    .post-card:hover {
-      padding: 22px;
-      transform: scale(1.05);
-      border-top: 2px solid rgb(212, 255, 0);
-      background: rgba(30, 31, 0, 0.5)
     }
 
     .reveal {
@@ -1195,6 +1185,303 @@
         padding: 28px 20px
       }
     }
+
+
+    /* =========================
+       ARTICLE / BLOG READABILITY
+    ========================= */
+    .blog-post {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .post-header {
+      margin: 8px 0 44px;
+      padding: 24px 0 28px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .post-lead {
+      max-width: 820px;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #d2d2d2;
+      font-size: clamp(1rem, 1.5vw, 1.18rem);
+      line-height: 1.85;
+    }
+
+    .post-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+      color: #6f6f6f;
+      font-size: .52rem;
+      letter-spacing: 1.8px;
+    }
+
+    .post-content {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #b8b8b8;
+      font-size: 1rem;
+      line-height: 1.92;
+    }
+
+    .post-content > p,
+    .article-section > p {
+      margin: 0 0 20px;
+    }
+
+    .post-content strong,
+    .article-section strong {
+      color: #f0f0f0;
+      font-weight: 600;
+    }
+
+    .article-section {
+      position: relative;
+      margin-top: 68px;
+      padding-top: 34px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .article-section:first-of-type {
+      margin-top: 54px;
+    }
+
+    .article-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+      font-size: .53rem;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    .article-number::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+      box-shadow: 0 0 8px rgba(213,255,0,.5);
+    }
+
+    .article-section h2 {
+      margin: 0 0 26px;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.45rem, 2.6vw, 2.25rem);
+      line-height: 1.28;
+      letter-spacing: -.5px;
+    }
+
+    .post-content blockquote {
+      margin: 26px 0;
+      padding: 18px 20px;
+      border-left: 3px solid rgba(213,255,0,.72);
+      background: linear-gradient(90deg, rgba(213,255,0,.065), rgba(213,255,0,.012));
+      color: #e5e5e5;
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .post-content .highlight-quote,
+    .post-content .final-quote {
+      padding: 24px 26px;
+      border: 1px solid rgba(213,255,0,.26);
+      border-left: 3px solid var(--accent);
+      background: rgba(213,255,0,.045);
+      color: #f4f4f4;
+      font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+    }
+
+    .post-content ul {
+      margin: 14px 0 24px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .post-content li {
+      position: relative;
+      margin: 9px 0;
+      padding-left: 24px;
+      color: #b7b7b7;
+      line-height: 1.75;
+    }
+
+    .post-content li::before {
+      content: '›';
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .thinking-box,
+    .scenario-box {
+      margin: 30px 0;
+      padding: 24px;
+      border: 1px solid rgba(0,247,255,.18);
+      background: rgba(0,247,255,.025);
+    }
+
+    .thinking-box > span,
+    .scenario-label {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--cyan);
+      font-family: 'Orbitron', sans-serif;
+      font-size: .5rem;
+      letter-spacing: 2.1px;
+    }
+
+    .thinking-box.warning {
+      border-color: rgba(213,255,0,.22);
+      background: rgba(213,255,0,.03);
+    }
+
+    .thinking-box.warning > span {
+      color: var(--accent);
+    }
+
+    .thinking-box p {
+      margin: 0;
+      color: #bdbdbd;
+      line-height: 1.8;
+    }
+
+    .scenario-step {
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .scenario-step:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .scenario-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .scenario-step > span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+      font-size: .48rem;
+      letter-spacing: 1.8px;
+    }
+
+    .scenario-step p {
+      margin: 0;
+      color: #d0d0d0;
+    }
+
+    .framework-section {
+      border-top-color: rgba(213,255,0,.22);
+    }
+
+    .requirement-flow {
+      margin-top: 26px;
+      display: grid;
+      gap: 8px;
+      max-width: 680px;
+    }
+
+    .flow-item {
+      padding: 15px 18px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.02);
+      color: #d4d4d4;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+
+    .flow-item.final {
+      border-color: rgba(213,255,0,.35);
+      color: #fff;
+      background: rgba(213,255,0,.045);
+    }
+
+    .flow-arrow {
+      padding-left: 20px;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .conclusion {
+      margin-bottom: 48px;
+    }
+
+    .closing {
+      margin-top: 30px !important;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Keep article tags visually separated from article body */
+    .blog-post + .identity-tags {
+      max-width: 900px;
+      margin: 34px auto 0;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    @media(max-width:700px) {
+      .blog-post,
+      .post-content {
+        max-width: none;
+      }
+
+      .post-header {
+        margin-bottom: 34px;
+        padding: 20px 0 22px;
+      }
+
+      .post-content {
+        font-size: .93rem;
+        line-height: 1.82;
+      }
+
+      .article-section {
+        margin-top: 50px;
+        padding-top: 28px;
+      }
+
+      .article-section h2 {
+        margin-bottom: 20px;
+        font-size: 1.45rem;
+      }
+
+      .post-content blockquote,
+      .post-content .highlight-quote,
+      .post-content .final-quote,
+      .thinking-box,
+      .scenario-box {
+        margin: 22px 0;
+        padding: 18px;
+      }
+
+      .post-meta {
+        gap: 7px;
+        line-height: 1.7;
+      }
+
+      .blog-post + .identity-tags {
+        margin-top: 24px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1218,24 +1505,591 @@
 
   <main class="container" id="home">
     <section class="identity load-in">
-      <div class="eyebrow">Personal Portfolio / 2026</div>
+      <div class="eyebrow">Posts</div>
 
       <h1>
-        System<br>Analyst
-        <span class="highlight">FORMER FULL-STACK DEVELOPER</span>
+        <span class="highlight">How I Break Down Ambiguous Requirements</span>
       </h1>
 
-      <p class="description">
-        I translate ideas, business requirements, and complex problems into structured systems and technical solutions.
-        Currently working at <a href="https://rapid.amn.co.id/" target="_blank">AMN ↗</a>, with experience in
-        requirement gathering,
-        system design, functional specifications, testing, database architecture, and communication between users and
-        developers.
-        <br><br>
-        But I am not built only from systems and code. 
-        Outside the digital world, I find my balance in the quiet beauty of <strong>aquatic life—crafting aquascapes, keeping ornamental fish, and managing predatory tanks. </strong> 
-        When I'm not diving into underwater worlds, I immerse myself in music, exploring the rhythm and soul of <strong>drums, violin, and piano.</strong>
-      </p>
+      <article class="blog-post">
+
+        <header class="post-header">
+          <p class="post-lead">
+            A personal approach to turning vague business requests into
+            structured processes, questions, scenarios, and requirements.
+          </p>
+          <div class="post-meta">
+            <span>BY ILHAM MAULANA</span>
+            <span>•</span>
+            <span>SYSTEM ANALYST</span>
+            <span>•</span>
+            <span>2026</span>
+          </div>
+        </header>
+
+
+        <section class="post-content">
+
+          <p>
+            Salah satu tantangan terbesar ketika menjadi seorang
+            <strong>System Analyst</strong> adalah menghadapi requirement
+            yang masih ambigu.
+          </p>
+
+          <p>
+            User mungkin datang dengan sebuah permintaan sederhana:
+          </p>
+
+          <blockquote>
+            “Kami ingin dibuatkan sistem untuk proses ini.”
+          </blockquote>
+
+          <p>Atau bahkan:</p>
+
+          <blockquote>
+            “Proses yang sekarang masih manual, bisa dibuatkan aplikasinya?”
+          </blockquote>
+
+          <p>
+            Masalahnya, sebagai seorang analyst, kita tidak bisa langsung
+            menerjemahkan kalimat tersebut menjadi fitur, database,
+            atau user interface.
+          </p>
+
+          <p>
+            Ada satu prinsip yang saya pelajari dari atasan saya di
+            <strong>AMN Indonesia</strong>:
+          </p>
+
+          <blockquote class="highlight-quote">
+            “Sebagai seorang analyst, pada dasarnya kita tidak tahu apa-apa
+            tentang proses bisnis client atau user.”
+          </blockquote>
+
+          <p>
+            Dan menurut saya, justru dari asumsi itulah proses analisis
+            yang baik dimulai.
+          </p>
+
+          <p>
+            Jangan datang dengan asumsi bahwa kita sudah memahami bisnis mereka.
+            Jangan langsung menawarkan solusi. Jangan langsung berpikir tentang
+            tabel, API, atau button yang harus dibuat.
+          </p>
+
+          <p>
+            Mulailah dari memahami
+            <strong>apa yang sebenarnya terjadi hari ini.</strong>
+          </p>
+
+
+          <!-- 01 -->
+
+          <section class="article-section">
+
+            <div class="article-number">01 / START WITH THE EXISTING SOP</div>
+
+            <h2>Start With the Existing SOP</h2>
+
+            <p>
+              Hal pertama yang biasanya saya tanyakan ketika mendapatkan
+              requirement baru adalah:
+            </p>
+
+            <blockquote>
+              “SOP atau proses transaksi yang berjalan sekarang seperti apa?”
+            </blockquote>
+
+            <p>
+              Saya ingin memahami kondisi saat ini terlebih dahulu.
+            </p>
+
+            <p>
+              Karena sering kali user sudah mengetahui apa yang ingin mereka
+              perbaiki, tetapi belum tentu bisa menjelaskan seluruh proses
+              bisnisnya secara terstruktur.
+            </p>
+
+            <p>
+              Dengan meminta mereka menjelaskan proses yang berjalan sekarang,
+              kita mulai mendapatkan gambaran awal tentang:
+            </p>
+
+            <ul>
+              <li>Bagaimana sebuah transaksi dimulai</li>
+              <li>Siapa yang melakukan proses tersebut</li>
+              <li>Informasi apa yang digunakan</li>
+              <li>Dokumen apa yang dibuat</li>
+              <li>Ke mana dokumen atau informasi tersebut berpindah</li>
+              <li>Siapa yang melakukan pengecekan</li>
+              <li>Bagaimana proses tersebut berakhir</li>
+            </ul>
+
+            <p>
+              Dari satu pertanyaan sederhana tersebut, biasanya justru mulai
+              muncul banyak pertanyaan lanjutan.
+            </p>
+
+          </section>
+
+
+          <!-- 02 -->
+
+          <section class="article-section">
+
+            <div class="article-number">02 / IDENTIFY THE ACTORS</div>
+
+            <h2>Identify the Actors</h2>
+
+            <p>
+              Setelah memahami gambaran proses, saya biasanya mulai memetakan:
+            </p>
+
+            <blockquote>
+              “Siapa saja yang terlibat dalam proses ini?”
+            </blockquote>
+
+            <p>
+              Dalam sebuah proses bisnis, actor tidak selalu hanya berarti
+              user yang menggunakan aplikasi.
+            </p>
+
+            <p>Bisa saja terdapat:</p>
+
+            <ul>
+              <li>Staff yang melakukan input</li>
+              <li>Supervisor yang melakukan review</li>
+              <li>Manager yang memberikan approval</li>
+              <li>Department lain yang menerima hasil proses</li>
+              <li>External party yang mengirimkan atau menerima dokumen</li>
+            </ul>
+
+            <p>
+              Setiap actor biasanya memiliki tanggung jawab yang berbeda.
+            </p>
+
+            <p>
+              Dari sini kita mulai bisa memahami
+              <strong>siapa melakukan apa.</strong>
+            </p>
+
+            <div class="thinking-box">
+              <span>// QUESTIONS TO EXPLORE</span>
+
+              <ul>
+                <li>Siapa yang membuat transaksi?</li>
+                <li>Apakah semua user bisa membuatnya?</li>
+                <li>Apakah ada role tertentu?</li>
+                <li>Setelah dibuat, siapa yang menerima transaksi tersebut?</li>
+                <li>Apakah actor berikutnya bisa mengubah data?</li>
+                <li>Sampai batas mana masing-masing actor memiliki akses?</li>
+              </ul>
+            </div>
+
+            <p>
+              Pada tahap ini, requirement mulai berubah dari sebuah kalimat
+              abstrak menjadi sebuah proses yang memiliki responsibility.
+            </p>
+
+          </section>
+
+
+          <!-- 03 -->
+
+          <section class="article-section">
+
+            <div class="article-number">03 / FOLLOW THE DOCUMENT FLOW</div>
+
+            <h2>Follow the Document Flow</h2>
+
+            <p>
+              Hal berikutnya yang menurut saya sangat penting adalah memahami:
+            </p>
+
+            <blockquote>
+              “Dokumennya berjalan ke mana?”
+            </blockquote>
+
+            <p>
+              Banyak proses bisnis sebenarnya berpusat pada perpindahan
+              dokumen atau informasi.
+            </p>
+
+            <p>
+              Sebuah transaksi mungkin dimulai dari sebuah request,
+              kemudian menghasilkan dokumen tertentu, lalu dikirim ke pihak
+              lain untuk diperiksa, disetujui, atau diproses lebih lanjut.
+            </p>
+
+            <div class="thinking-box">
+              <span>// FOLLOW THE FLOW</span>
+
+              <ul>
+                <li>Dokumen apa yang digunakan dalam proses ini?</li>
+                <li>Dokumen tersebut dibuat oleh siapa?</li>
+                <li>Setelah dibuat, dokumen dikirim ke siapa?</li>
+                <li>Apakah dokumen bisa direvisi?</li>
+                <li>Apakah ada versi dokumen?</li>
+                <li>Apakah ada dokumen pendukung?</li>
+                <li>Dalam kondisi apa dokumen dianggap selesai?</li>
+              </ul>
+            </div>
+
+            <p>
+              Dengan mengikuti perjalanan dokumen, kita sebenarnya sedang
+              mengikuti perjalanan data dalam sistem.
+            </p>
+
+            <p>
+              Dan dari situlah biasanya mulai terlihat entity, status,
+              serta kemungkinan relasi antar proses.
+            </p>
+
+          </section>
+
+
+          <!-- 04 -->
+
+          <section class="article-section">
+
+            <div class="article-number">04 / UNDERSTAND THE APPROVAL PROCESS</div>
+
+            <h2>Understand the Approval Process</h2>
+
+            <p>
+              Setelah mengetahui alur transaksi dan dokumen, pertanyaan
+              berikutnya biasanya adalah:
+            </p>
+
+            <blockquote>
+              “Apakah proses ini membutuhkan approval?”
+            </blockquote>
+
+            <p>
+              Kalau jawabannya iya, proses analisis biasanya mulai semakin dalam.
+            </p>
+
+            <ul>
+              <li>Siapa saja yang melakukan approval?</li>
+              <li>Apakah approval dilakukan secara berurutan?</li>
+              <li>Apakah bisa parallel?</li>
+              <li>Apakah approval memiliki nominal atau kondisi tertentu?</li>
+              <li>Apakah approver bisa melakukan reject?</li>
+              <li>Jika reject, proses kembali ke siapa?</li>
+              <li>Apakah perlu revisi?</li>
+              <li>Apakah approval bisa diwakilkan?</li>
+              <li>Apakah ada batas waktu approval?</li>
+            </ul>
+
+            <p>
+              Sering kali requirement awal hanya berbunyi:
+            </p>
+
+            <blockquote>
+              “Nanti ada approval dari manager.”
+            </blockquote>
+
+            <p>
+              Tetapi satu kalimat tersebut sebenarnya masih menyimpan
+              banyak kemungkinan.
+            </p>
+
+            <div class="thinking-box warning">
+              <span>// DON'T STOP AT THE FIRST ANSWER</span>
+
+              <p>
+                Manager yang mana?
+                Apakah semua transaksi harus melalui manager?
+                Bagaimana jika nominalnya berbeda?
+                Bagaimana jika manager melakukan reject?
+                Apakah transaksi langsung selesai atau kembali ke pembuat?
+              </p>
+            </div>
+
+            <p>
+              Pertanyaan-pertanyaan inilah yang membantu mengubah requirement
+              yang ambigu menjadi <strong>business rules</strong> yang lebih jelas.
+            </p>
+
+          </section>
+
+
+          <!-- 05 -->
+
+          <section class="article-section">
+
+            <div class="article-number">05 / UNDERSTAND THE CURRENT DOCUMENT</div>
+
+            <h2>Ask About the Current Form or Document</h2>
+
+            <p>
+              Saya juga biasanya meminta untuk melihat bentuk dokumen yang
+              digunakan saat ini.
+            </p>
+
+            <ul>
+              <li>Form manual</li>
+              <li>Excel</li>
+              <li>PDF</li>
+              <li>Surat</li>
+              <li>Form internal</li>
+              <li>Screenshot aplikasi lama</li>
+            </ul>
+
+            <p>
+              Karena sering kali user lebih mudah menjelaskan proses melalui
+              sesuatu yang sudah mereka gunakan sehari-hari.
+            </p>
+
+            <p>
+              Dari sebuah form, kita bisa mulai melihat:
+            </p>
+
+            <ul>
+              <li>Data apa saja yang sebenarnya dibutuhkan</li>
+              <li>Field mana yang wajib</li>
+              <li>Field mana yang hanya digunakan dalam kondisi tertentu</li>
+              <li>Informasi mana yang berasal dari proses sebelumnya</li>
+              <li>Informasi mana yang perlu diinput manual</li>
+              <li>Siapa yang membutuhkan informasi tersebut</li>
+            </ul>
+
+            <p>
+              Namun, saya tidak langsung berasumsi bahwa semua field yang ada
+              di dokumen lama harus masuk ke sistem baru.
+            </p>
+
+            <p>
+              Justru dari situ kita bisa mulai bertanya:
+            </p>
+
+            <blockquote>
+              “Field ini digunakan untuk apa?”
+              <br><br>
+              “Siapa yang mengisi?”
+              <br><br>
+              “Apakah field ini selalu digunakan?”
+              <br><br>
+              “Kalau kosong, apa dampaknya?”
+            </blockquote>
+
+          </section>
+
+
+          <!-- 06 -->
+
+          <section class="article-section">
+
+            <div class="article-number">06 / DRILL DOWN</div>
+
+            <h2>Drill Down From Every Answer</h2>
+
+            <p>
+              Bagi saya, proses requirement gathering itu seperti menggali.
+            </p>
+
+            <p>
+              Satu jawaban jarang menjadi akhir dari sebuah pertanyaan.
+              Justru satu jawaban biasanya menghasilkan pertanyaan berikutnya.
+            </p>
+
+            <div class="scenario-box">
+
+              <div class="scenario-label">// EXAMPLE</div>
+
+              <div class="scenario-step">
+                <span>QUESTION</span>
+                <p>“Setelah transaksi dibuat, apa yang terjadi?”</p>
+              </div>
+
+              <div class="scenario-step">
+                <span>ANSWER</span>
+                <p>“Nanti dikirim ke manager untuk approval.”</p>
+              </div>
+
+              <div class="scenario-step">
+                <span>DRILL DOWN</span>
+
+                <ul>
+                  <li>Manager mendapatkan informasi dari mana?</li>
+                  <li>Apakah ada notifikasi?</li>
+                  <li>Apa yang bisa dilakukan manager?</li>
+                  <li>Approve atau reject saja?</li>
+                  <li>Apakah bisa memberikan catatan?</li>
+                  <li>Kalau reject, kembali ke siapa?</li>
+                  <li>Apakah user bisa mengedit transaksi yang ditolak?</li>
+                  <li>Setelah direvisi, apakah approval dimulai dari awal?</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <p>
+              Satu jawaban menghasilkan sebuah cabang pertanyaan baru.
+            </p>
+
+            <p>
+              Bukan mencoba langsung menebak semua kemungkinan dari awal,
+              tetapi <strong>menggunakan jawaban dari user sebagai trigger
+                untuk menggali lapisan berikutnya.</strong>
+            </p>
+
+          </section>
+
+
+          <!-- FRAMEWORK -->
+
+          <section class="article-section framework-section">
+
+            <div class="article-number">MY REQUIREMENT MAPPING APPROACH</div>
+
+            <h2>From Ambiguity to Structure</h2>
+
+            <div class="requirement-flow">
+
+              <div class="flow-item">Existing Process</div>
+              <div class="flow-arrow">↓</div>
+
+              <div class="flow-item">Who is involved?</div>
+              <div class="flow-arrow">↓</div>
+
+              <div class="flow-item">What happens first?</div>
+              <div class="flow-arrow">↓</div>
+
+              <div class="flow-item">What document or data is created?</div>
+              <div class="flow-arrow">↓</div>
+
+              <div class="flow-item">Where does it go?</div>
+              <div class="flow-arrow">↓</div>
+
+              <div class="flow-item">Who reviews or approves it?</div>
+              <div class="flow-arrow">↓</div>
+
+              <div class="flow-item">What happens if it is approved?</div>
+              <div class="flow-arrow">↓</div>
+
+              <div class="flow-item">What happens if it is rejected?</div>
+              <div class="flow-arrow">↓</div>
+
+              <div class="flow-item final">What are the exceptions?</div>
+
+            </div>
+
+          </section>
+
+
+          <!-- SOLUTION -->
+
+          <section class="article-section">
+
+            <div class="article-number">DON'T START WITH THE SOLUTION</div>
+
+            <h2>Understand the Problem First</h2>
+
+            <p>
+              Salah satu hal yang saya coba hindari ketika melakukan
+              requirement gathering adalah terlalu cepat memikirkan solusi.
+            </p>
+
+            <p>Ketika user mengatakan:</p>
+
+            <blockquote>
+              “Saya ingin ada tombol approval.”
+            </blockquote>
+
+            <p>Saya tidak langsung berpikir:</p>
+
+            <blockquote>
+              “Oke, berarti kita buat button Approve dan Reject.”
+            </blockquote>
+
+            <p>
+              Yang ingin saya pahami terlebih dahulu adalah:
+            </p>
+
+            <blockquote class="highlight-quote">
+              “Kenapa proses approval ini dibutuhkan?”
+              <br><br>
+              “Apa yang sebenarnya sedang dikontrol?”
+            </blockquote>
+
+            <p>
+              Karena terkadang solusi yang diminta user adalah solusi
+              berdasarkan cara mereka melihat masalah saat ini.
+            </p>
+
+            <p>
+              Tugas analyst, menurut saya, bukan hanya mencatat
+              apa yang diminta user.
+            </p>
+
+            <p>
+              Tetapi memahami:
+            </p>
+
+            <blockquote class="highlight-quote">
+              “Masalah apa yang sebenarnya sedang mereka coba selesaikan?”
+            </blockquote>
+
+          </section>
+
+
+          <!-- CONCLUSION -->
+
+          <section class="article-section conclusion">
+
+            <div class="article-number">CONCLUSION</div>
+
+            <h2>Start by Knowing Nothing</h2>
+
+            <p>
+              Cara saya menghadapi ambiguous requirements sebenarnya dimulai
+              dari sebuah mindset sederhana:
+            </p>
+
+            <blockquote class="final-quote">
+              “Assume that I know nothing about the user's business process.”
+            </blockquote>
+
+            <p>
+              Saya mulai dari memahami proses yang berjalan saat ini.
+            </p>
+
+            <p>
+              Saya bertanya tentang SOP, kemudian memetakan actor yang terlibat,
+              mengikuti alur dokumen, memahami proses approval, melihat bentuk
+              dokumen yang digunakan, dan terus melakukan drill down dari setiap
+              jawaban yang diberikan.
+            </p>
+
+            <p>
+              Bagi saya, requirement gathering bukan sekadar bertanya:
+            </p>
+
+            <blockquote>
+              “Fitur apa yang ingin dibuat?”
+            </blockquote>
+
+            <p>Tetapi lebih kepada:</p>
+
+            <blockquote class="highlight-quote">
+              “Ceritakan kepada saya bagaimana proses ini benar-benar berjalan.”
+            </blockquote>
+
+            <p>
+              Karena ketika kita memahami prosesnya, requirement biasanya
+              tidak lagi terasa ambigu.
+            </p>
+
+            <p class="closing">
+              Requirement tersebut mungkin hanya belum digali cukup dalam.
+            </p>
+
+          </section>
+
+        </section>
+
+      </article>
 
       <div class="identity-tags">
         <span>REQUIREMENT GATHERING</span>
@@ -1247,263 +2101,9 @@
         <span>LARAVEL</span>
         <span>CodeIgniter</span>
       </div>
-
-      <div class="actions">
-        <div class="socials">
-          <a href="https://www.instagram.com/haiil__/" target="_blank">INSTAGRAM ↗</a>
-          <a href="https://www.facebook.com/profile.php?id=100015257626585" target="_blank">FACEBOOK ↗</a>
-          <a href="https://www.tiktok.com/@haiil_28" target="_blank">TIKTOK ↗</a>
-          <a href="https://www.linkedin.com/in/ilham-maulanaa/" target="_blank">LINKEDIN ↗</a>
-        </div>
-        <button class="contact-btn" onclick="window.open('https://wa.me/6285158899372','_blank')">LET'S BUILD SOMETHING
-          →</button>
-      </div>
-    </section>
-
-    <section class="visual-section load-in">
-      <div class="corner-label">A VISUAL SELF PORTRAIT</div>
-
-      <div class="art-frame">
-        <img src="images/ChatGPT Image Aug 25, 2026, 07_22_19 PM.png">
-        <div class="art-overlay"></div>
-      </div>
-
-      <div class="info-card card-top">
-        <small>CORE STRENGTH</small>
-        <p>Analytical thinking, fast learning, responsibility, creativity, and finding structure inside complexity.</p>
-      </div>
-
-      <div class="info-card card-bottom">
-        <small>HUMAN SIDE</small>
-        <p>Sometimes overthinking, losing focus, getting stuck on details, and needing the right trigger to see a new
-          perspective.</p>
-      </div>
     </section>
   </main>
 
-  <section class="section" id="projects">
-    <div class="section-head reveal">
-      <div class="section-kicker">// SELECTED WORK</div>
-      <h2>PROJECTS & SYSTEMS</h2>
-      <p class="section-intro">A selection of enterprise and internal systems I have contributed to. Due to
-        confidentiality and NDA restrictions, sensitive information, source code, business data, and internal interfaces
-        are not publicly displayed.</p>
-    </div>
-    <div class="projects-grid">
-      <article class="project-card reveal"><span class="project-no">01 / E-Procurement System</span>
-        <div>
-          <h3>Enterprise Procurement Platform</h3>
-          <div>
-            <p> centralized system designed to support and streamline the procurement lifecycle, from purchase requests
-            and approval workflows to vendor management and procurement monitoring. </p>
-            <br>
-            <b>My Contribution :</b>
-            <ul>
-              <li>Requirement Gathering</li>
-              <li>Business Process Analysis</li>
-              <li>System Flow & Database Design</li>
-              <li>Functional Specification</li>
-              <li>UI/UX Mockup</li>
-              <li>End-to-end Test</li>
-              <li>SIT & UAT Support</li>
-              <li>Coordination between Business Users and Development Team</li>
-            </ul>
-          </div>
-        </div><span class="project-tags">Procurement Workflow · Approval Flow · Vendor Management · Role-Based Access ·
-          Monitoring</span>
-      </article>
-      <article class="project-card reveal"><span class="project-no">02 / Sales Tracking & Monitoring System</span>
-        <div>
-          <h3>Sales Performance Monitoring Platform</h3>
-          <div>
-            <p>A centralized platform for tracking sales activities, monitoring performance, 
-              and providing visibility into sales progress through structured reporting and dashboards.</p>
-            <br>
-            <b>My Contribution :</b>
-            <ul>
-              <li>Requirement Gathering</li>
-              <li>Business Process Analysis</li>
-              <li>System Flow & Database Design</li>
-              <li>Functional Specification</li>
-              <li>UI/UX Mockup</li>
-              <li>End-to-end Test</li>
-              <li>SIT & UAT Support</li>
-              <li>Coordination between Business Users and Development Team</li>
-            </ul>
-          </div>
-        </div><span class="project-tags">Sales Tracking · Performance Monitoring · Reporting · Dashboard · Data Analysis</span>
-      </article>
-      <article class="project-card reveal"><span class="project-no">03 / Learning Management System</span>
-        <div>
-          <h3>Corporate Learning Management Platform</h3>
-            <div>
-              <p>
-                A digital learning platform designed to manage learning activities, training materials, user progress, and structured learning programs.
-              </p>
-              <br>
-              <b>My Contribution :</b>
-              <ul>
-                <li>Technical Solution & Architecture Design</li>
-                <li>Technical Specification</li>
-                <li>Development Planning & Task Breakdown</li>
-                <li>Database & API Design</li>
-                <li>Code Review & Quality Assurance</li>
-                <li>Automated Testing & Unit Testing</li>
-                <li>Technical Problem Solving & Troubleshooting</li>
-                <li>Deployment & Release Management</li>
-              </ul>
-            </div>
-        </div><span class="project-tags">Learning Management · Training Program · User Progress · Assessment · Reporting</span>
-      </article>
-      <article class="project-card reveal"><span class="project-no">04 / Scrap Scaling Monitoring System</span>
-        <div>
-          <h3>Operational Monitoring & Measurement Platform</h3>
-            <div>
-              <p>
-                A system designed to support operational monitoring and tracking related to scrap scaling processes, helping transform operational activities into structured and traceable data.
-              </p>
-              <br>
-              <b>My Contribution :</b>
-              <ul>
-                <li>Technical Solution & Architecture Design</li>
-                <li>Technical Specification</li>
-                <li>Development Planning & Task Breakdown</li>
-                <li>Database & API Design</li>
-                <li>Code Review & Quality Assurance</li>
-                <li>Automated Testing & Unit Testing</li>
-                <li>Technical Problem Solving & Troubleshooting</li>
-                <li>Deployment & Release Management</li>
-              </ul>
-            </div>
-        </div><span class="project-tags">Operational Monitoring · Data Tracking · Measurement · Traceability · Reporting</span>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" id="education">
-    <div class="section-head reveal">
-      <div class="section-kicker">// LEARNING PATH</div>
-      <h2>EDUCATION</h2>
-      <p class="section-intro">This section reflects a continuous learning journey rather than a simple timeline, showcasing the pivotal milestones that define how I think and execute today.</p>
-    </div>
-    <div class="timeline reveal">
-      <div class="timeline-progress"></div>
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">FOUNDATION</div>
-          <h3>Wikrama Vocational High School</h3>
-          <p>Acquired a solid foundation in basic programming and system analysis. This academic background was further enhanced during my internship (At Nayaka Teknologi), where I gained extensive hands-on experience handling real-world development workflows and industry-standard projects.</p>
-        </article>
-      </div>
-      <!-- <div class="timeline-item right">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">SPECIALIZATION</div>
-          <h3>Technology & Systems</h3>
-          <p>A milestone for the period where programming, databases, software architecture, and structured problem
-            solving became central to your skill set.</p>
-        </article>
-      </div>
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">CONTINUOUS LEARNING</div>
-          <h3>Learning Beyond the Classroom</h3>
-          <p>Technologies, side projects, documentation, experimentation, and real-world problems continue to shape the
-            next stage of the timeline.</p>
-        </article>
-      </div> -->
-    </div>
-  </section>
-
-  <section class="section" id="experience">
-    <div class="section-head reveal">
-      <div class="section-kicker">// PROFESSIONAL PATH</div>
-      <h2>EXPERIENCE</h2>
-      <p class="section-intro">From writing code to designing the systems around it—the transition itself became an
-        important part of my perspective.</p>
-    </div>
-    <div class="timeline reveal">
-      <div class="timeline-progress"></div>
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">AMN Indonesia July 2022 - January 2023</div>
-          <h3>Programmer / Full-Stack Development</h3>
-          <p>Worked across application development, backend and frontend implementation, databases, unit testing, and
-            the practical details required to deliver working software.</p>
-        </article>
-      </div>
-      <div class="timeline-item right">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">AMN Indonesia January 2023 - January 2024</div>
-          <h3>Acting Lead Programmer</h3>
-          <p>Expanded beyond implementation by helping coordinate technical work, breaking down problems, and connecting
-            development decisions with broader project needs.</p>
-        </article>
-      </div>
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">AMN Indonesia January 2025 - Today</div>
-          <h3>System Analyst</h3>
-          <p>Focused on requirement gathering, system and database design, functional specifications, testing, SIT/UAT,
-            task breakdown, and communication between users and developers.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="post">
-    <div class="section-head reveal">
-      <div class="section-kicker">// NOTES & PERSPECTIVES</div>
-      <h2>POST</h2>
-      <p class="section-intro">A space for thoughts about systems, technology, learning, aquariums, and the curiosity
-        that connects them.</p>
-    </div>
-    <div class="posts-list">
-      <article class="post-card reveal" onclick="window.location.href='Article How I Break Down Ambiguous Requirements.html'"><span>01</span>
-        <h3>How I Break Down Ambiguous Requirements</h3>
-        <p>Notes on turning scattered information into structured scenarios and questions.</p>
-      </article>
-      <article class="post-card reveal"><span>COMING SOON / 02</span>
-        <h3>Triggers, Context, and Problem Solving</h3>
-        <p>A personal reflection on how the right question can unlock an entirely different line of thought.</p>
-      </article>
-      <article class="post-card reveal"><span>COMING SOON / 03</span>
-        <h3>What Aquariums Teach About Systems</h3>
-        <p>Observations about balance, dependency, maintenance, and living ecosystems.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="story">
-    <div class="story-inner">
-      <div class="story-title">// THE SYSTEM BEHIND THE PERSON</div>
-      <div class="story-grid">
-        <article class="story-item">
-          <h3>01 / WORK</h3>
-          <p>Breaking vague requirements into flows, rules, systems, and solutions that developers and users can
-            understand together.</p>
-        </article>
-        <article class="story-item">
-          <h3>02 / RHYTHM</h3>
-          <p>A drummer and pianist: one side keeps the tempo, the other searches for harmony.</p>
-        </article>
-        <article class="story-item">
-          <h3>03 / Solace And Peace</h3>
-          <p>Fishkeeping is not just a hobby—it's curiosity, observation, patience, and learning from living systems.
-          </p>
-        </article>
-        <article class="story-item">
-          <h3>04 / GROWTH</h3>
-          <p>I don't need to become perfect. I just need to keep becoming a better version of myself.</p>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <script>
     const canvas = document.getElementById('borderCanvas');
