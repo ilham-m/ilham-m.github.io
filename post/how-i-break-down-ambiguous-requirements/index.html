@@ -98,6 +98,13 @@
       margin-bottom: 22px;
     }
 
+    .eyebrow a {
+      color: var(--accent);
+      font-size: .72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
     .eyebrow::before {
       content: "";
       width: 32px;
@@ -1498,14 +1505,20 @@
     </div>
   </div>
   <nav class="site-nav" aria-label="Primary navigation"><a class="nav-brand" href="#home">ILHAM.M</a>
-    <div class="nav-links"><a href="#home">HOME</a><a href="#projects">PROJECTS</a><a href="#education">EDUCATION</a><a
-        href="#experience">EXPERIENCE</a><a href="#post">POST</a></div>
+    <div class="nav-links">
+      <a href="/#home">HOME</a>
+      <a href="/#projects">PROJECTS</a>
+      <a href="/#education">EDUCATION</a>
+      <a href="/#experience">EXPERIENCE</a>
+      <a href="/#post">POST</a></div>
   </nav>
   <canvas id="borderCanvas"></canvas>
 
   <main class="container" id="home">
     <section class="identity load-in">
-      <div class="eyebrow">Posts</div>
+      <div class="eyebrow">
+        <a href="/#home" >Home</a>/ Posts
+      </div>  
 
       <h1>
         <span class="highlight">How I Break Down Ambiguous Requirements</span>
