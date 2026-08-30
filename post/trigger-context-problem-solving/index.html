@@ -77,14 +77,14 @@
       min-height: 100vh;
       padding: 100px clamp(50px, 8vw, 150px) 70px;
       display: grid;
-      grid-template-columns: minmax(380px, .9fr) minmax(480px, 1.1fr);
+      /* grid-template-columns: minmax(380px, .9fr) minmax(480px, 1.1fr); */
       gap: clamp(40px, 6vw, 100px);
       align-items: center;
     }
 
     .identity {
       width: 100%;
-      max-width: 720px;
+      /* max-width: 720px; */
     }
 
     .eyebrow {
@@ -96,6 +96,13 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 22px;
+    }
+
+    .eyebrow a {
+      color: var(--accent);
+      font-size: .72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     .eyebrow::before {
@@ -128,7 +135,7 @@
       color: #bdbdbd;
       font-size: clamp(.88rem, 1vw, 1rem);
       line-height: 1.9;
-      max-width: 680px;
+      /* max-width: 680px; */
       margin: 28px 0;
     }
 
@@ -382,11 +389,11 @@
    TABLET
 ========================= */
     @media(max-width:1100px) {
-      .container {
+      /* .container {
         grid-template-columns: 1fr;
         padding: 95px clamp(35px, 7vw, 80px) 70px;
         gap: 75px;
-      }
+      } */
 
       .identity {
         max-width: 850px;
@@ -928,8 +935,8 @@
       font-family: Inter, sans-serif;
       color: #888;
       font-size: .84rem;
-      line-height: 1.75;  
-      margin-left : 18px;
+      line-height: 1.75;
+      margin-left: 18px;
     }
 
     .project-card li {
@@ -945,7 +952,7 @@
       font-size: .84rem;
       line-height: 1.75
     }
-    
+
     .project-tags {
       color: var(--cyan);
       font-size: .5rem;
@@ -1051,12 +1058,9 @@
     }
 
     .post-card {
-      cursor: pointer;
       padding: 22px;
       border-top: 2px solid rgba(213, 255, 0, .5);
-      background: rgba(255, 255, 255, .025);
-      transition: all 0.4s ease-in; 
-      display: block;
+      background: rgba(255, 255, 255, .025)
     }
 
     .post-card span {
@@ -1075,14 +1079,6 @@
       color: #888;
       font-size: .8rem;
       line-height: 1.7
-    }
-
-    .post-card:hover {
-      padding: 22px;
-      border-color: rgba(213, 255, 0, .45);
-      transform: translateY(-4px);
-      border-top: 2px solid rgb(212, 255, 0);
-      background: rgba(30, 31, 0, 0.5)
     }
 
     .reveal {
@@ -1196,6 +1192,303 @@
         padding: 28px 20px
       }
     }
+
+
+    /* =========================
+       ARTICLE / BLOG READABILITY
+    ========================= */
+    .blog-post {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .post-header {
+      margin: 8px 0 44px;
+      padding: 24px 0 28px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .post-lead {
+      max-width: 820px;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #d2d2d2;
+      font-size: clamp(1rem, 1.5vw, 1.18rem);
+      line-height: 1.85;
+    }
+
+    .post-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+      color: #6f6f6f;
+      font-size: .52rem;
+      letter-spacing: 1.8px;
+    }
+
+    .post-content {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #b8b8b8;
+      font-size: 1rem;
+      line-height: 1.92;
+    }
+
+    .post-content > p,
+    .article-section > p {
+      margin: 0 0 20px;
+    }
+
+    .post-content strong,
+    .article-section strong {
+      color: #f0f0f0;
+      font-weight: 600;
+    }
+
+    .article-section {
+      position: relative;
+      margin-top: 68px;
+      padding-top: 34px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .article-section:first-of-type {
+      margin-top: 54px;
+    }
+
+    .article-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+      font-size: .53rem;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    .article-number::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+      box-shadow: 0 0 8px rgba(213,255,0,.5);
+    }
+
+    .article-section h2 {
+      margin: 0 0 26px;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.45rem, 2.6vw, 2.25rem);
+      line-height: 1.28;
+      letter-spacing: -.5px;
+    }
+
+    .post-content blockquote {
+      margin: 26px 0;
+      padding: 18px 20px;
+      border-left: 3px solid rgba(213,255,0,.72);
+      background: linear-gradient(90deg, rgba(213,255,0,.065), rgba(213,255,0,.012));
+      color: #e5e5e5;
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .post-content .highlight-quote,
+    .post-content .final-quote {
+      padding: 24px 26px;
+      border: 1px solid rgba(213,255,0,.26);
+      border-left: 3px solid var(--accent);
+      background: rgba(213,255,0,.045);
+      color: #f4f4f4;
+      font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+    }
+
+    .post-content ul {
+      margin: 14px 0 24px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .post-content li {
+      position: relative;
+      margin: 9px 0;
+      padding-left: 24px;
+      color: #b7b7b7;
+      line-height: 1.75;
+    }
+
+    .post-content li::before {
+      content: '›';
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .thinking-box,
+    .scenario-box {
+      margin: 30px 0;
+      padding: 24px;
+      border: 1px solid rgba(0,247,255,.18);
+      background: rgba(0,247,255,.025);
+    }
+
+    .thinking-box > span,
+    .scenario-label {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--cyan);
+      font-family: 'Orbitron', sans-serif;
+      font-size: .5rem;
+      letter-spacing: 2.1px;
+    }
+
+    .thinking-box.warning {
+      border-color: rgba(213,255,0,.22);
+      background: rgba(213,255,0,.03);
+    }
+
+    .thinking-box.warning > span {
+      color: var(--accent);
+    }
+
+    .thinking-box p {
+      margin: 0;
+      color: #bdbdbd;
+      line-height: 1.8;
+    }
+
+    .scenario-step {
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .scenario-step:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .scenario-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .scenario-step > span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+      font-size: .48rem;
+      letter-spacing: 1.8px;
+    }
+
+    .scenario-step p {
+      margin: 0;
+      color: #d0d0d0;
+    }
+
+    .framework-section {
+      border-top-color: rgba(213,255,0,.22);
+    }
+
+    .requirement-flow {
+      margin-top: 26px;
+      display: grid;
+      gap: 8px;
+      max-width: 680px;
+    }
+
+    .flow-item {
+      padding: 15px 18px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.02);
+      color: #d4d4d4;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+
+    .flow-item.final {
+      border-color: rgba(213,255,0,.35);
+      color: #fff;
+      background: rgba(213,255,0,.045);
+    }
+
+    .flow-arrow {
+      padding-left: 20px;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .conclusion {
+      margin-bottom: 48px;
+    }
+
+    .closing {
+      margin-top: 30px !important;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Keep article tags visually separated from article body */
+    .blog-post + .identity-tags {
+      max-width: 900px;
+      margin: 34px auto 0;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    @media(max-width:700px) {
+      .blog-post,
+      .post-content {
+        max-width: none;
+      }
+
+      .post-header {
+        margin-bottom: 34px;
+        padding: 20px 0 22px;
+      }
+
+      .post-content {
+        font-size: .93rem;
+        line-height: 1.82;
+      }
+
+      .article-section {
+        margin-top: 50px;
+        padding-top: 28px;
+      }
+
+      .article-section h2 {
+        margin-bottom: 20px;
+        font-size: 1.45rem;
+      }
+
+      .post-content blockquote,
+      .post-content .highlight-quote,
+      .post-content .final-quote,
+      .thinking-box,
+      .scenario-box {
+        margin: 22px 0;
+        padding: 18px;
+      }
+
+      .post-meta {
+        gap: 7px;
+        line-height: 1.7;
+      }
+
+      .blog-post + .identity-tags {
+        margin-top: 24px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1211,32 +1504,804 @@
       <div class="loader-status" id="loaderStatus">LOADING 0%</div>
     </div>
   </div>
-  <nav class="site-nav" aria-label="Primary navigation"><a class="nav-brand" href="#home">ILHAM.M</a>
-    <div class="nav-links"><a href="#home">HOME</a><a href="#projects">PROJECTS</a><a href="#education">EDUCATION</a><a
-        href="#experience">EXPERIENCE</a><a href="#post">POST</a></div>
+  <nav class="site-nav" aria-label="Primary navigation"><a class="nav-brand" href="/#home">ILHAM.M</a>
+    <div class="nav-links">
+      <a href="/#home">HOME</a>
+      <a href="/#projects">PROJECTS</a>
+      <a href="/#education">EDUCATION</a>
+      <a href="/#experience">EXPERIENCE</a>
+      <a href="/#post">POST</a></div>
   </nav>
   <canvas id="borderCanvas"></canvas>
 
   <main class="container" id="home">
     <section class="identity load-in">
-      <div class="eyebrow">Personal Portfolio / 2026</div>
+      <div class="eyebrow">
+        <a href="/#home" >Home</a>/ Posts
+      </div>  
 
       <h1>
-        System<br>Analyst
-        <span class="highlight">FORMER FULL-STACK DEVELOPER</span>
+        <span class="highlight">Triggers, Context, and Problem Solving</span>
       </h1>
 
-      <p class="description">
-        I translate ideas, business requirements, and complex problems into structured systems and technical solutions.
-        Currently working at <a href="https://rapid.amn.co.id/" target="_blank">AMN ↗</a>, with experience in
-        requirement gathering,
-        system design, functional specifications, testing, database architecture, and communication between users and
-        developers.
-        <br><br>
-        But I am not built only from systems and code. 
-        Outside the digital world, I find my balance in the quiet beauty of <strong>aquatic life—crafting aquascapes, keeping ornamental fish, and managing predatory tanks. </strong> 
-        When I'm not diving into underwater worlds, I immerse myself in music, exploring the rhythm and soul of <strong>drums, violin, and piano.</strong>
-      </p>
+      <article class="blog-post">
+
+    <header class="post-header">
+        <div class="section-kicker">// SYSTEM ANALYSIS NOTES / 02</div>
+
+        <h1>Triggers, Context,<br><span>and Problem Solving</span></h1>
+
+        <p class="post-lead">
+            A personal reflection on how the right question can unlock
+            an entirely different line of thought.
+        </p>
+
+        <div class="post-meta">
+            <span>BY ILHAM MAULANA</span>
+            <span>•</span>
+            <span>SYSTEM ANALYST</span>
+            <span>•</span>
+            <span>2026</span>
+        </div>
+    </header>
+
+
+    <section class="post-content">
+
+        <!-- INTRODUCTION -->
+
+        <section class="article-section">
+
+            <div class="article-number">01 / THE PROBLEM WITH "KNOWING"</div>
+
+            <h2>Masalahnya Bukan Selalu Karena Tidak Tahu</h2>
+
+            <p>
+                Ada beberapa kondisi ketika saya sedang menganalisis sebuah
+                masalah, tetapi entah kenapa saya tidak bisa melihat
+                kemungkinan jalannya.
+            </p>
+
+            <p>
+                Saya mengerti requirement-nya.
+            </p>
+
+            <p>
+                Saya mengerti konteksnya.
+            </p>
+
+            <p>
+                Saya bahkan mengerti sisi teknis dari masalah tersebut.
+            </p>
+
+            <p>
+                Tetapi tetap saja ada sesuatu yang terasa belum terhubung.
+            </p>
+
+            <p>
+                Awalnya saya berpikir mungkin saya memang belum tahu jawabannya.
+            </p>
+
+            <p>
+                Namun semakin sering saya mengalami hal tersebut, saya mulai
+                menyadari bahwa masalahnya tidak selalu karena
+                <strong>kurangnya knowledge.</strong>
+            </p>
+
+            <p>
+                Kadang-kadang saya hanya belum memikirkan masalah tersebut
+                dari sudut pandang tertentu.
+            </p>
+
+            <p>
+                Dan ternyata, saya cukup sering bekerja dengan pola seperti ini.
+            </p>
+
+        </section>
+
+
+        <!-- TRIGGER -->
+
+        <section class="article-section">
+
+            <div class="article-number">02 / A TRIGGER CAN CHANGE EVERYTHING</div>
+
+            <h2>Satu Trigger Bisa Mengubah Semuanya</h2>
+
+            <p>
+                Misalnya seseorang bertanya kepada saya:
+            </p>
+
+            <blockquote>
+                "Apakah aplikasi A bisa di-deploy di server B?"
+            </blockquote>
+
+            <p>
+                Jawaban pertama yang mungkin muncul di kepala saya:
+            </p>
+
+            <blockquote>
+                "Secara teknis, bisa."
+            </blockquote>
+
+            <p>
+                Selesai?
+            </p>
+
+            <p>
+                Belum tentu.
+            </p>
+
+            <p>
+                Kemudian seseorang bertanya:
+            </p>
+
+            <blockquote class="highlight-quote">
+                "Apa yang membuatnya tidak bisa?"
+            </blockquote>
+
+            <p>
+                Pertanyaan tersebut secara sederhana terlihat seperti
+                pertanyaan lanjutan biasa.
+            </p>
+
+            <p>
+                Tetapi bagi saya, pertanyaan seperti itu bisa menjadi
+                <strong>trigger.</strong>
+            </p>
+
+            <p>
+                Saya mulai melihat masalah dari sisi yang berbeda.
+            </p>
+
+            <div class="thinking-box">
+
+                <span>// NEW BRANCHES OF THOUGHT</span>
+
+                <ul>
+                    <li>Apakah Operating System-nya compatible?</li>
+                    <li>Bagaimana dengan runtime?</li>
+                    <li>Bagaimana dengan database?</li>
+                    <li>Apakah server tersebut bisa mengakses database?</li>
+                    <li>Bagaimana network-nya?</li>
+                    <li>Bagaimana authentication-nya?</li>
+                    <li>Apakah ada firewall?</li>
+                    <li>Bagaimana dependency aplikasi?</li>
+                    <li>Apakah ada service lain yang dibutuhkan?</li>
+                </ul>
+
+            </div>
+
+            <p>
+                Tiba-tiba, masalah yang sebelumnya terlihat sederhana
+                menjadi jauh lebih luas.
+            </p>
+
+            <p>
+                Menariknya, bukan berarti saya baru mengetahui hal-hal
+                tersebut setelah mendapatkan pertanyaan itu.
+            </p>
+
+            <p>
+                Sebagian besar kemungkinan tersebut sebenarnya sudah saya
+                ketahui.
+            </p>
+
+            <p>
+                Tetapi pertanyaan tersebut membuat saya
+                <strong>mengaktifkan jalur berpikir yang berbeda.</strong>
+            </p>
+
+        </section>
+
+
+        <!-- QUESTION -->
+
+        <section class="article-section">
+
+            <div class="article-number">03 / THE MISSING PIECE</div>
+
+            <h2>Sometimes, the Missing Piece Is the Question</h2>
+
+            <p>
+                Dari situ saya mulai menyadari sesuatu.
+            </p>
+
+            <p>
+                Dalam problem solving, kita sering menganggap bahwa kemampuan
+                menyelesaikan masalah bergantung pada seberapa banyak
+                knowledge yang kita miliki.
+            </p>
+
+            <p>
+                Menurut saya, itu hanya sebagian dari ceritanya.
+            </p>
+
+            <p>
+                Kadang yang kita butuhkan bukan informasi baru.
+            </p>
+
+            <blockquote class="highlight-quote">
+                Tetapi <strong>pertanyaan yang tepat.</strong>
+            </blockquote>
+
+            <p>
+                Sebuah trigger bisa berupa:
+            </p>
+
+            <ul>
+                <li>Sebuah pertanyaan</li>
+                <li>Sebuah constraint</li>
+                <li>Sebuah contoh kasus</li>
+                <li>Sebuah kemungkinan yang bertentangan dengan asumsi awal</li>
+                <li>Perspektif dari orang lain</li>
+                <li>Sebuah kata yang muncul dalam diskusi</li>
+                <li>Atau bahkan satu detail kecil yang sebelumnya tidak diperhatikan</li>
+            </ul>
+
+            <p>
+                Contohnya, ketika sedang membahas deployment, seseorang
+                tiba-tiba mengatakan:
+            </p>
+
+            <blockquote>
+                "Database-nya bagaimana?"
+            </blockquote>
+
+            <p>
+                Satu kalimat sederhana tersebut bisa mengubah seluruh
+                arah pembahasan.
+            </p>
+
+            <div class="comparison-box">
+
+                <div class="comparison-item">
+
+                    <span>// INITIAL QUESTION</span>
+
+                    <p>
+                        Apakah aplikasinya bisa dijalankan
+                        di server tersebut?
+                    </p>
+
+                </div>
+
+                <div class="comparison-arrow">
+                    →
+                </div>
+
+                <div class="comparison-item">
+
+                    <span>// NEW QUESTION</span>
+
+                    <p>
+                        Apakah seluruh sistem bisa berjalan
+                        dengan benar di environment tersebut?
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p>
+                Dan itu adalah dua pertanyaan yang berbeda.
+            </p>
+
+        </section>
+
+
+        <!-- CONTEXT -->
+
+        <section class="article-section">
+
+            <div class="article-number">04 / CONTEXT ACTIVATES KNOWLEDGE</div>
+
+            <h2>Context Mengaktifkan Knowledge</h2>
+
+            <p>
+                Hal yang menurut saya menarik adalah kita tidak selalu
+                mengakses semua knowledge yang kita miliki dalam satu waktu.
+            </p>
+
+            <p>
+                Kita memiliki pengalaman.
+            </p>
+
+            <p>
+                Kita memiliki technical knowledge.
+            </p>
+
+            <p>
+                Kita memiliki pengalaman dari project sebelumnya.
+            </p>
+
+            <p>
+                Kita memiliki pattern yang pernah kita lihat.
+            </p>
+
+            <p>
+                Tetapi semuanya tidak selalu muncul ketika kita sedang berpikir.
+            </p>
+
+            <div class="highlight-card">
+
+                <div class="card-label">// CONTEXT</div>
+
+                <h3>Context can activate knowledge.</h3>
+
+                <p>
+                    Sebuah pertanyaan dapat memunculkan technical
+                    consideration tertentu.
+                </p>
+
+                <p>
+                    Sebuah contoh dapat mengingatkan kita pada pengalaman
+                    sebelumnya.
+                </p>
+
+                <p>
+                    Sebuah constraint dapat memperlihatkan dependency
+                    yang sebelumnya tidak terlihat.
+                </p>
+
+            </div>
+
+            <p>
+                Jadi terkadang proses berpikir bukan tentang:
+            </p>
+
+            <blockquote>
+                "Saya mendapatkan informasi baru."
+            </blockquote>
+
+            <p>
+                Tetapi lebih kepada:
+            </p>
+
+            <blockquote class="highlight-quote">
+                "Saya akhirnya menghubungkan informasi yang sebenarnya
+                sudah saya punya."
+            </blockquote>
+
+        </section>
+
+
+        <!-- REQUIREMENT -->
+
+        <section class="article-section">
+
+            <div class="article-number">05 / REQUIREMENT GATHERING</div>
+
+            <h2>Ini Menjadi Sangat Penting Saat Requirement Gathering</h2>
+
+            <p>
+                Hal ini menjadi semakin terasa ketika saya bekerja sebagai
+                <strong>System Analyst.</strong>
+            </p>
+
+            <p>
+                Dalam requirement gathering, user hampir tidak pernah
+                memberikan semua kemungkinan scenario sekaligus.
+            </p>
+
+            <p>
+                Biasanya mereka memberikan apa yang mereka anggap penting.
+            </p>
+
+            <blockquote>
+                "Kami ingin membuat sistem pengajuan."
+            </blockquote>
+
+            <p>
+                Dari sudut pandang user, mungkin prosesnya sudah sangat jelas.
+            </p>
+
+            <p>
+                Tetapi bagi analyst, kalimat tersebut masih sangat luas.
+            </p>
+
+            <div class="thinking-box">
+
+                <span>// QUESTIONS</span>
+
+                <ul>
+                    <li>Siapa yang mengajukan?</li>
+                    <li>Apa yang diajukan?</li>
+                    <li>Data apa yang dibutuhkan?</li>
+                    <li>Siapa yang memproses?</li>
+                    <li>Apakah ada approval?</li>
+                    <li>Siapa approver-nya?</li>
+                    <li>Bagaimana jika ditolak?</li>
+                    <li>Bagaimana jika data perlu direvisi?</li>
+                    <li>Apakah ada dokumen?</li>
+                    <li>Bagaimana dokumen tersebut berpindah?</li>
+                    <li>Apa yang terjadi setelah approval?</li>
+                </ul>
+
+            </div>
+
+            <p>
+                Karena itu, saya tidak selalu berharap semua informasi
+                akan langsung muncul dari user.
+            </p>
+
+            <p>
+                Saya mencoba memberikan
+                <strong>trigger melalui pertanyaan.</strong>
+            </p>
+
+        </section>
+
+
+        <!-- CONTEXT QUESTIONS -->
+
+        <section class="article-section">
+
+            <div class="article-number">06 / OPEN THE CONTEXT</div>
+
+            <h2>Pertanyaan Adalah Alat Untuk Membuka Context</h2>
+
+            <p>
+                Saya mulai melihat bahwa tugas analyst bukan hanya
+                mendapatkan jawaban.
+            </p>
+
+            <p>
+                Tetapi juga <strong>membuka context yang tepat.</strong>
+            </p>
+
+            <p>
+                Misalnya saya bertanya:
+            </p>
+
+            <blockquote>
+                "Setelah transaksi dibuat, apa yang terjadi?"
+            </blockquote>
+
+            <p>User menjawab:</p>
+
+            <blockquote>
+                "Nanti di-approve manager."
+            </blockquote>
+
+            <p>
+                Dari jawaban tersebut, saya bisa mendapatkan beberapa
+                trigger baru.
+            </p>
+
+            <div class="question-tree">
+
+                <div class="root-question">
+                    Manager melakukan approval
+                </div>
+
+                <div class="tree-line"></div>
+
+                <div class="question-grid">
+
+                    <div class="question-node">
+                        Manager yang mana?
+                    </div>
+
+                    <div class="question-node">
+                        Apakah semua transaksi
+                        harus melalui manager?
+                    </div>
+
+                    <div class="question-node">
+                        Apakah ada approval lain
+                        sebelum manager?
+                    </div>
+
+                    <div class="question-node">
+                        Apa yang dilakukan manager
+                        ketika membuka transaksi?
+                    </div>
+
+                    <div class="question-node">
+                        Apa yang terjadi jika reject?
+                    </div>
+
+                    <div class="question-node">
+                        Setelah revisi, apakah approval
+                        dimulai dari awal?
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p>
+                Satu jawaban menghasilkan pertanyaan berikutnya.
+            </p>
+
+            <p>
+                Dan dari situlah requirement mulai menjadi lebih jelas.
+            </p>
+
+        </section>
+
+
+        <!-- SIMPLE QUESTIONS -->
+
+        <section class="article-section">
+
+            <div class="article-number">07 / DON'T BE AFRAID TO ASK</div>
+
+            <h2>Jangan Takut Bertanya Hal yang Terlihat Sederhana</h2>
+
+            <p>
+                Salah satu hal yang menurut saya penting adalah jangan terlalu
+                takut untuk bertanya sesuatu yang terlihat sederhana.
+            </p>
+
+            <p>
+                Kadang kita merasa:
+            </p>
+
+            <blockquote>
+                "Harusnya saya sudah tahu ini."
+            </blockquote>
+
+            <p>
+                Atau:
+            </p>
+
+            <blockquote>
+                "Masa saya harus tanya hal seperti ini?"
+            </blockquote>
+
+            <p>
+                Tetapi dalam business analysis, asumsi justru bisa
+                menjadi masalah.
+            </p>
+
+            <p>
+                Karena kita datang dari dunia dan pengalaman yang berbeda
+                dengan user.
+            </p>
+
+            <p>
+                Apa yang menurut kita obvious belum tentu obvious bagi mereka.
+            </p>
+
+            <p>
+                Dan sebaliknya.
+            </p>
+
+            <blockquote class="highlight-quote">
+                Lebih baik bertanya daripada membuat asumsi.
+            </blockquote>
+
+            <p>
+                Lebih baik mendapatkan jawaban sederhana sekarang daripada
+                menemukan business rule yang terlewat ketika sistem sudah
+                selesai dibuat.
+            </p>
+
+        </section>
+
+
+        <!-- FLOW -->
+
+        <section class="article-section framework-section">
+
+            <div class="article-number">08 / BRANCH OF THOUGHT</div>
+
+            <h2>Dari Trigger Menjadi Branch of Thought</h2>
+
+            <p>
+                Kalau saya mencoba menggambarkan pola berpikir saya secara
+                sederhana, mungkin seperti ini:
+            </p>
+
+            <div class="problem-flow">
+
+                <div class="flow-item">
+                    PROBLEM
+                </div>
+
+                <div class="flow-arrow">↓</div>
+
+                <div class="flow-item">
+                    Initial Thought
+                </div>
+
+                <div class="flow-arrow">↓</div>
+
+                <div class="flow-item trigger">
+                    TRIGGER
+                </div>
+
+                <div class="flow-arrow">↓</div>
+
+                <div class="flow-branches">
+
+                    <div class="flow-branch">
+                        <span>SCENARIO</span>
+                    </div>
+
+                    <div class="flow-branch">
+                        <span>CONSTRAINT</span>
+                    </div>
+
+                    <div class="flow-branch">
+                        <span>ACTOR</span>
+                    </div>
+
+                </div>
+
+                <div class="flow-arrow">↓</div>
+
+                <div class="flow-item">
+                    New Context
+                </div>
+
+                <div class="flow-arrow">↓</div>
+
+                <div class="flow-item">
+                    New Questions
+                </div>
+
+                <div class="flow-arrow">↓</div>
+
+                <div class="flow-item final">
+                    Deeper Analysis
+                </div>
+
+            </div>
+
+            <p>
+                Satu trigger dapat membuka beberapa kemungkinan.
+            </p>
+
+            <p>
+                Dan setiap kemungkinan tersebut bisa menghasilkan trigger
+                baru lagi.
+            </p>
+
+            <p>
+                Bagi saya, proses problem solving akhirnya terasa seperti
+                <strong>membuka cabang-cabang pemikiran</strong> sampai kita
+                menemukan struktur masalah yang sebenarnya.
+            </p>
+
+        </section>
+
+
+        <!-- RIGHT QUESTION -->
+
+        <section class="article-section">
+
+            <div class="article-number">09 / THE RIGHT QUESTION</div>
+
+            <h2>The Right Question Matters</h2>
+
+            <p>
+                Mungkin inilah alasan kenapa saya cukup percaya bahwa kualitas
+                sebuah analysis tidak hanya ditentukan oleh kemampuan menjawab.
+            </p>
+
+            <p>
+                Tetapi juga kemampuan untuk
+                <strong>mengajukan pertanyaan yang tepat.</strong>
+            </p>
+
+            <div class="comparison-box vertical">
+
+                <div class="comparison-item">
+
+                    <span>// ANSWER</span>
+
+                    <p>
+                        Memberikan kita informasi.
+                    </p>
+
+                </div>
+
+                <div class="comparison-arrow">
+                    +
+                </div>
+
+                <div class="comparison-item">
+
+                    <span>// QUESTION</span>
+
+                    <p>
+                        Menentukan informasi apa yang kita cari.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p>
+                Dalam banyak kasus, masalah bukan karena kita tidak memiliki
+                solusi.
+            </p>
+
+            <p>
+                Masalahnya adalah kita belum menemukan pertanyaan yang membawa
+                kita menuju solusi tersebut.
+            </p>
+
+        </section>
+
+
+        <!-- CONCLUSION -->
+
+        <section class="article-section conclusion">
+
+            <div class="article-number">10 / CONCLUSION</div>
+
+            <h2>Sometimes You Just Need the Right Trigger</h2>
+
+            <p>
+                Saya semakin menyadari bahwa cara saya berpikir dalam
+                menyelesaikan masalah sangat dipengaruhi oleh
+                <strong>trigger dan context.</strong>
+            </p>
+
+            <p>
+                Kadang saya bisa melihat banyak kemungkinan.
+            </p>
+
+            <p>
+                Kadang saya hanya melihat satu jalur.
+            </p>
+
+            <p>
+                Kemudian seseorang memberikan satu pertanyaan sederhana,
+                dan tiba-tiba perspektif saya berubah.
+            </p>
+
+            <p>
+                Bukan karena saya tiba-tiba menjadi lebih pintar.
+            </p>
+
+            <p>
+                Bukan juga karena saya baru mendapatkan knowledge baru.
+            </p>
+
+            <p>
+                Tetapi karena saya mendapatkan
+                <strong>trigger yang tepat untuk membuka jalur pemikiran
+                yang sebelumnya belum aktif.</strong>
+            </p>
+
+            <p>
+                Dan mungkin itu juga yang membuat saya melihat peran seorang
+                System Analyst dengan cara yang sedikit berbeda.
+            </p>
+
+            <blockquote class="final-quote">
+                Seorang analyst tidak harus selalu menjadi orang yang
+                memiliki semua jawaban.
+                <br><br>
+                Tetapi setidaknya, kita harus bisa mencari
+                <strong>pertanyaan yang tepat untuk menemukan jawaban tersebut.</strong>
+            </blockquote>
+
+            <div class="closing-statement">
+
+                <span>// FINAL THOUGHT</span>
+
+                <p>
+                    Sometimes, the hardest part of solving a problem
+                    is not finding the answer.
+                </p>
+
+                <p>
+                    It's finding the question that makes the answer visible.
+                </p>
+
+            </div>
+
+        </section>
+
+    </section>
+
+</article>
 
       <div class="identity-tags">
         <span>REQUIREMENT GATHERING</span>
@@ -1248,263 +2313,9 @@
         <span>LARAVEL</span>
         <span>CodeIgniter</span>
       </div>
-
-      <div class="actions">
-        <div class="socials">
-          <a href="https://www.instagram.com/haiil__/" target="_blank">INSTAGRAM ↗</a>
-          <a href="https://www.facebook.com/profile.php?id=100015257626585" target="_blank">FACEBOOK ↗</a>
-          <a href="https://www.tiktok.com/@haiil_28" target="_blank">TIKTOK ↗</a>
-          <a href="https://www.linkedin.com/in/ilham-maulanaa/" target="_blank">LINKEDIN ↗</a>
-        </div>
-        <button class="contact-btn" onclick="window.open('https://wa.me/6285158899372','_blank')">LET'S BUILD SOMETHING
-          →</button>
-      </div>
-    </section>
-
-    <section class="visual-section load-in">
-      <div class="corner-label">A VISUAL SELF PORTRAIT</div>
-
-      <div class="art-frame">
-        <img src="images/20260830_213905.jpg">
-        <div class="art-overlay"></div>
-      </div>
-
-      <div class="info-card card-top">
-        <small>CORE STRENGTH</small>
-        <p>Analytical thinking, fast learning, responsibility, creativity, and finding structure inside complexity.</p>
-      </div>
-
-      <div class="info-card card-bottom">
-        <small>HUMAN SIDE</small>
-        <p>Sometimes overthinking, losing focus, getting stuck on details, and needing the right trigger to see a new
-          perspective.</p>
-      </div>
     </section>
   </main>
 
-  <section class="section" id="projects">
-    <div class="section-head reveal">
-      <div class="section-kicker">// SELECTED WORK</div>
-      <h2>PROJECTS & SYSTEMS</h2>
-      <p class="section-intro">A selection of enterprise and internal systems I have contributed to. Due to
-        confidentiality and NDA restrictions, sensitive information, source code, business data, and internal interfaces
-        are not publicly displayed.</p>
-    </div>
-    <div class="projects-grid">
-      <article class="project-card reveal"><span class="project-no">01 / E-Procurement System</span>
-        <div>
-          <h3>Enterprise Procurement Platform</h3>
-          <div>
-            <p> centralized system designed to support and streamline the procurement lifecycle, from purchase requests
-            and approval workflows to vendor management and procurement monitoring. </p>
-            <br>
-            <b>My Contribution :</b>
-            <ul>
-              <li>Requirement Gathering</li>
-              <li>Business Process Analysis</li>
-              <li>System Flow & Database Design</li>
-              <li>Functional Specification</li>
-              <li>UI/UX Mockup</li>
-              <li>End-to-end Test</li>
-              <li>SIT & UAT Support</li>
-              <li>Coordination between Business Users and Development Team</li>
-            </ul>
-          </div>
-        </div><span class="project-tags">Procurement Workflow · Approval Flow · Vendor Management · Role-Based Access ·
-          Monitoring</span>
-      </article>
-      <article class="project-card reveal"><span class="project-no">02 / Sales Tracking & Monitoring System</span>
-        <div>
-          <h3>Sales Performance Monitoring Platform</h3>
-          <div>
-            <p>A centralized platform for tracking sales activities, monitoring performance, 
-              and providing visibility into sales progress through structured reporting and dashboards.</p>
-            <br>
-            <b>My Contribution :</b>
-            <ul>
-              <li>Requirement Gathering</li>
-              <li>Business Process Analysis</li>
-              <li>System Flow & Database Design</li>
-              <li>Functional Specification</li>
-              <li>UI/UX Mockup</li>
-              <li>End-to-end Test</li>
-              <li>SIT & UAT Support</li>
-              <li>Coordination between Business Users and Development Team</li>
-            </ul>
-          </div>
-        </div><span class="project-tags">Sales Tracking · Performance Monitoring · Reporting · Dashboard · Data Analysis</span>
-      </article>
-      <article class="project-card reveal"><span class="project-no">03 / Learning Management System</span>
-        <div>
-          <h3>Corporate Learning Management Platform</h3>
-            <div>
-              <p>
-                A digital learning platform designed to manage learning activities, training materials, user progress, and structured learning programs.
-              </p>
-              <br>
-              <b>My Contribution :</b>
-              <ul>
-                <li>Technical Solution & Architecture Design</li>
-                <li>Technical Specification</li>
-                <li>Development Planning & Task Breakdown</li>
-                <li>Database & API Design</li>
-                <li>Code Review & Quality Assurance</li>
-                <li>Automated Testing & Unit Testing</li>
-                <li>Technical Problem Solving & Troubleshooting</li>
-                <li>Deployment & Release Management</li>
-              </ul>
-            </div>
-        </div><span class="project-tags">Learning Management · Training Program · User Progress · Assessment · Reporting</span>
-      </article>
-      <article class="project-card reveal"><span class="project-no">04 / Scrap Scaling Monitoring System</span>
-        <div>
-          <h3>Operational Monitoring & Measurement Platform</h3>
-            <div>
-              <p>
-                A system designed to support operational monitoring and tracking related to scrap scaling processes, helping transform operational activities into structured and traceable data.
-              </p>
-              <br>
-              <b>My Contribution :</b>
-              <ul>
-                <li>Technical Solution & Architecture Design</li>
-                <li>Technical Specification</li>
-                <li>Development Planning & Task Breakdown</li>
-                <li>Database & API Design</li>
-                <li>Code Review & Quality Assurance</li>
-                <li>Automated Testing & Unit Testing</li>
-                <li>Technical Problem Solving & Troubleshooting</li>
-                <li>Deployment & Release Management</li>
-              </ul>
-            </div>
-        </div><span class="project-tags">Operational Monitoring · Data Tracking · Measurement · Traceability · Reporting</span>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" id="education">
-    <div class="section-head reveal">
-      <div class="section-kicker">// LEARNING PATH</div>
-      <h2>EDUCATION</h2>
-      <p class="section-intro">This section reflects a continuous learning journey rather than a simple timeline, showcasing the pivotal milestones that define how I think and execute today.</p>
-    </div>
-    <div class="timeline reveal">
-      <div class="timeline-progress"></div>
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">FOUNDATION</div>
-          <h3>Wikrama Vocational High School</h3>
-          <p>Acquired a solid foundation in basic programming and system analysis. This academic background was further enhanced during my internship (At Nayaka Teknologi), where I gained extensive hands-on experience handling real-world development workflows and industry-standard projects.</p>
-        </article>
-      </div>
-      <!-- <div class="timeline-item right">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">SPECIALIZATION</div>
-          <h3>Technology & Systems</h3>
-          <p>A milestone for the period where programming, databases, software architecture, and structured problem
-            solving became central to your skill set.</p>
-        </article>
-      </div>
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">CONTINUOUS LEARNING</div>
-          <h3>Learning Beyond the Classroom</h3>
-          <p>Technologies, side projects, documentation, experimentation, and real-world problems continue to shape the
-            next stage of the timeline.</p>
-        </article>
-      </div> -->
-    </div>
-  </section>
-
-  <section class="section" id="experience">
-    <div class="section-head reveal">
-      <div class="section-kicker">// PROFESSIONAL PATH</div>
-      <h2>EXPERIENCE</h2>
-      <p class="section-intro">From writing code to designing the systems around it—the transition itself became an
-        important part of my perspective.</p>
-    </div>
-    <div class="timeline reveal">
-      <div class="timeline-progress"></div>
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">AMN Indonesia July 2022 - January 2023</div>
-          <h3>Programmer / Full-Stack Development</h3>
-          <p>Worked across application development, backend and frontend implementation, databases, unit testing, and
-            the practical details required to deliver working software.</p>
-        </article>
-      </div>
-      <div class="timeline-item right">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">AMN Indonesia January 2023 - January 2024</div>
-          <h3>Acting Lead Programmer</h3>
-          <p>Expanded beyond implementation by helping coordinate technical work, breaking down problems, and connecting
-            development decisions with broader project needs.</p>
-        </article>
-      </div>
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <article class="timeline-card">
-          <div class="timeline-date">AMN Indonesia January 2025 - Today</div>
-          <h3>System Analyst</h3>
-          <p>Focused on requirement gathering, system and database design, functional specifications, testing, SIT/UAT,
-            task breakdown, and communication between users and developers.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="post">
-    <div class="section-head reveal">
-      <div class="section-kicker">// NOTES & PERSPECTIVES</div>
-      <h2>POST</h2>
-      <p class="section-intro">A space for thoughts about systems, technology, learning, aquariums, and the curiosity
-        that connects them.</p> 
-    </div>
-    <div class="posts-list">
-      <article class="post-card reveal" onclick="window.location.href='/post/how-i-break-down-ambiguous-requirements'"><span>01</span>
-        <h3>How I Break Down Ambiguous Requirements</h3>
-        <p>Notes on turning scattered information into structured scenarios and questions.</p>
-      </article>
-      <article class="post-card reveal"><span>COMING SOON / 02</span>
-        <h3>Triggers, Context, and Problem Solving</h3>
-        <p>A personal reflection on how the right question can unlock an entirely different line of thought.</p>
-      </article>
-      <article class="post-card reveal"><span>COMING SOON / 03</span>
-        <h3>What Aquariums Teach About Systems</h3>
-        <p>Observations about balance, dependency, maintenance, and living ecosystems.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="story">
-    <div class="story-inner">
-      <div class="story-title">// THE SYSTEM BEHIND THE PERSON</div>
-      <div class="story-grid">
-        <article class="story-item">
-          <h3>01 / WORK</h3>
-          <p>Breaking vague requirements into flows, rules, systems, and solutions that developers and users can
-            understand together.</p>
-        </article>
-        <article class="story-item">
-          <h3>02 / RHYTHM</h3>
-          <p>A drummer and pianist: one side keeps the tempo, the other searches for harmony.</p>
-        </article>
-        <article class="story-item">
-          <h3>03 / Solace And Peace</h3>
-          <p>Fishkeeping is not just a hobby—it's curiosity, observation, patience, and learning from living systems.
-          </p>
-        </article>
-        <article class="story-item">
-          <h3>04 / GROWTH</h3>
-          <p>I don't need to become perfect. I just need to keep becoming a better version of myself.</p>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <script>
     const canvas = document.getElementById('borderCanvas');
